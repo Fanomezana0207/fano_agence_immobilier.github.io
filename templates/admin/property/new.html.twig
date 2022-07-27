@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Enregistrer un Bien{% endblock %}
+
+{% block body %}
+
+    <h2>Enregistrer un Bien</h2>
+
+    {{ include('admin/property/formulaire.html.twig', { button: 'Enregistrer'}) }}
+
+{% endblock %}

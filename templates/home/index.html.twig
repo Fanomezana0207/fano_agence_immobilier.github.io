@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Agence Immobilier{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Mon agence Immobilier</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti facere, quod fuga similique iste necessitatibus exercitationem maiores aut vitae eos minima temporibus voluptates totam cumque? Aspernatur porro eligendi inventore quia obcaecati tempore, velit maxime nesciunt nisi sint commodi cupiditate quae, suscipit, accusantium deleniti. Maiores minima excepturi libero aut vero. Laborum veritatis fugiat eum ea consectetur maiores nulla praesentium amet soluta cum iste accusantium facilis quam incidunt sequi perspiciatis, enim est explicabo? Id, praesentium? Vitae earum aspernatur dolore quisquam sint delectus nesciunt neque magni atque eos, aliquam iure similique consequatur rerum impedit quidem error minus iusto esse ipsum eveniet. Sed corporis cumque illum maxime veritatis amet quasi debitis natus ducimus saepe laborum odio cum modi, ad qui assumenda id blanditiis mollitia.</p>
+        </div>
+    </div>
+
+    {# #########################################
+
+    <form method="post" onsubmit="return confirm('Etes vous sûr?')">
+        <table>
+            <tr>
+                <td>Nom:</td>
+                <td><input type="text"></td>
+            </tr>
+        </table>    
+        <button type="submit">ok</submit>
+    </form>
+
+    ########################################  #}
+
+
+
+<div class="container">
+
+    <h2 class="text-info">Les derniers Biens</h2>
+    <div class="row flex">
+        {% for property in properties %}
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{{ path('property.show', {id: property.id, slug: property.slug }) }}">{{ property.title }}</a>
+                        </h5>
+                        <p class="card-text">
+                            {{ property.city }}
+                               ({{ property.address }})
+                        </p>
+                        <div class="text-primary price">
+                            {{ property.formatedPrice }} 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+</div>
+{% endblock %}
